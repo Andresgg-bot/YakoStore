@@ -30,6 +30,9 @@
         <h5 class="registro">
             ¿No esta registrado? <a href="register.php">Crea una cuenta aquí</a>
         </h5>
+        <h5 class="registro">
+            Volver a la pagina  <a href="index.php">principal</a>
+        </h5>
     </form>
 </body>
 </html>

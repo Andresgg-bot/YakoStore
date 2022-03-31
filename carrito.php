@@ -29,18 +29,7 @@
             <div class="fas fa-bars" id="menu-btn"></div>
             <a href="#" class="fas fa-shopping-cart"></a>
             <a href="login.php" class="fas fa-user"></a>
-        </div>
-    
-         <!--<form action="" class="login-form">
-            <h3>Sign in</h3>
-            <input type="email" name="" placeholder="enter your email" id="" class="box">
-            <input type="password" name="" placeholder="enter your password" id="" class="box">
-            <input type="submit" value="sign in" class="btn">
-            <div class="links">
-                <a href="register.html">Sign up</a>
-            </div>
-        </form> -->
-    
+        </div>    
     </header>
 
 
