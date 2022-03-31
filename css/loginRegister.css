@@ -1,0 +1,76 @@
+body, html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #19424f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-box{
+    width: 300px;
+    padding: 30px;
+    background-color: #F5F5F5;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.imagen{
+    border-radius: 50px;
+    width: 230px;
+    height: 180px;
+}
+
+.advice{
+    padding-bottom:  12px;
+    color: #19424f;
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box input[type="email"],
+.form-box button[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid #a6c516;
+    width: 200px;
+    outline: none;
+    color: #19424f;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus,
+.form-box input[type="email"]:focus{
+    width: 280px;
+    border-color: #19424f;
+}
+
+.form-box button[type="submit"]{
+    border: 0;
+    background: #a6c516;
+    cursor: pointer;
+    border: 2px solid #a6c516;
+    font-family: 'Poppins', sans-serif bold;
+}
+
+.form-box button[type="submit"]:hover{
+    background: none;
+}
+
+.registro{
+    color: #19424f;
+}
