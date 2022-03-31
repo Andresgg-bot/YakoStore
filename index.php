@@ -27,7 +27,7 @@
     
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="carrito.php" class="fas fa-shopping-cart"></a>
             <a href="login.php" class="fas fa-user"></a>
         </div>
     
@@ -228,7 +228,7 @@
             <a href="https://www.instagram.com/yakotiendademascotas/?hl=es-la" class="btn"> <i class="fab fa-instagram"></i> Instagram </a>
         </div>
     
-        <div class="credit"> created by <span> Andrés Barrantes </span> | all rights reserved! </div>
+        <div class="credit"> Created by <span> Grupo #1 </span> | All rights reserved! </div>
     
     </section>
     <script src="js/script.js"></script>
