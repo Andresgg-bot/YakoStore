@@ -19,9 +19,9 @@
         <a href="#" class="logo"> <i class="fas fa-paw"></i> Yako </a>
     
         <nav class="navbar">
-            <a href="#home">Home</a>
+            <a href="index.php">Home</a>
             <a href="#about">About</a>
-            <a href="#shop">Shop</a>
+            <a href="shop.php">Shop</a>
             <a href="#contact">Contact</a>
         </nav>
     
@@ -40,7 +40,7 @@
     
         <div class="content">
             <h3> <span>Hi</span> Welcome to Yako Pet Shop </h3>
-            <a href="#" class="btn">Shop Now</a>
+            <a href="shop.php" class="btn">Shop Now</a>
         </div>
     
         <img src="image/bottom_wave.png" class="wave" alt="">
@@ -59,8 +59,8 @@
     
         <div class="content">
             <h3>Premium <span>Pet Food</span> Manufacturer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum sint, dolore perspiciatis iure consequuntur eligendi quaerat vitae shaikh anas.</p>
-            <a href="#" class="btn">read more</a>
+            <p>We Provide Highest Quality Product To Ensure Your Pet's Lifelong Health And Well-being.</p>
+   
         </div>
     
     </section>
@@ -77,9 +77,9 @@
     
         <div class="content">
             <h3> <span>Air dried</span> Dog food </h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iure illo, repudiandae rem porro sunt.</p>
-            <div class="amount">$15.00 - $30.00</div>
-            <a href="#"> <img src="image/shop_now_dog.png" alt=""> </a>
+            <p>Air Dried Dog Food is made with simple, wholesome ingredients for a well-balanced meal your dog will seriously love.</p>
+            <div class="amount">$20.00</div>
+            <a href="productView.php"> <img src="image/shop_now_dog.png" alt=""> </a>
         </div>
     
     </div>
@@ -88,9 +88,9 @@
     
         <div class="content">
             <h3> <span>Air dried</span> Cat food </h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iure illo, repudiandae rem porro sunt.</p>
-            <div class="amount">$15.00 - $30.00</div>
-            <a href="#"> <img src="image/shop_now_cat.png" alt=""> </a>
+            <p>Safely air-dried and ready to serve, this single-protein recipe contains whole-prey ratios of 96% meat, organs, bone and New Zealand green mussels.</p>
+            <div class="amount">$20.00</div>
+            <a href="productView2.php"> <img src="image/shop_now_cat.png" alt=""> </a>
         </div>
     
         <div class="image">
