@@ -66,7 +66,7 @@
             <tr>
             
            <?php 
-            while  (($row = oci_fetch_array ($productos, OCI_BOTH)) != false) {
+            while  ($row = oci_fetch_array ($productos, OCI_ASSOC+OCI_RETURN_NULLS)) {
             foreach ($row as $item) {
                 print '<td style="border: 1px solid; height: 70px; width: 13%">'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'<br/>'.'</td>';
             }
