@@ -63,7 +63,7 @@
                 <th style="border: 1px solid;">Descripción del producto</th>
                 <th style="border: 1px solid;">Precio</th>
             </tr>
-            <tr ">
+            <tr>
             
            <?php 
             while  (($row = oci_fetch_array ($productos, OCI_BOTH)) != false) {
