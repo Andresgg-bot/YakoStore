@@ -1,14 +1,15 @@
 <?php
 require_once('connections/connection.php');
 
-$query = 'SHOW_INFO_PRODUCT(:productos, :PRODUCTO_BUSCADO); END;';
+$query = 'BEGIN SHOW_INFO_PRODUCT(:productos, :PRODUCTO_BUSCADO); END;';
 $stmt = oci_parse($conn, $query);
 //cursor
 $productos = oci_new_cursor($conn);
 oci_bind_by_name($stmt, ":productos", $productos, -1, OCI_B_CURSOR);
+
 //IN parameter
-oci_bind_by_name($stmt, ":PRODUCTO_BUSCADO", $Producto_buscado, 32);
 $Producto_buscado = 'Air dried Cat food';
+oci_bind_by_name($stmt, ":PRODUCTO_BUSCADO", $Producto_buscado);
 
 oci_execute($stmt);
 oci_execute($productos, OCI_DEFAULT);
@@ -64,8 +65,9 @@ oci_execute($productos, OCI_DEFAULT);
 
     <section>
 
-        <table style="border: 1px solid; width: 65%; font-size: 12px; text-align: center; margin-left: auto; margin-right: auto; border-collapse: collapse;">
+        <table CLASS="table table-dark" style="border: 1px solid; width: 65%; font-size: 12px; text-align: center; margin-left: auto; margin-right: auto; border-collapse: collapse;">
             <tr>
+                <th style="border: 1px solid;">Id</th>
                 <th style="border: 1px solid;">Nombre</th>
                 <th style="border: 1px solid;">Descripción del producto</th>
                 <th style="border: 1px solid;">Precio</th>
@@ -73,7 +75,7 @@ oci_execute($productos, OCI_DEFAULT);
             <tr ">
             
            <?php
-            while (($row = oci_fetch_array ($productos, OCI_RETURN_LOBS )) != false) {
+            while (($row = oci_fetch_array($productos, OCI_RETURN_LOBS)) != false) {
                 foreach ($row as $item) {
                     print '<td style="border: 1px solid; height: 70px; width: 13%">' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '<br/>' . '</td>';
                 }
@@ -86,7 +88,7 @@ oci_execute($productos, OCI_DEFAULT);
     </section>
 
     <br/>
-    <br/>
+    <br/>   
     <br/>
     <br/>
     <br/>
