@@ -28,7 +28,7 @@
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
             <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="login.php" class="fas fa-user"></a>
+            <a href="index.php" class="fas fa-user"></a>
         </div>    
     </header>
 
