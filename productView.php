@@ -67,7 +67,6 @@ oci_execute($productos, OCI_DEFAULT);
 
         <table CLASS="table table-dark" style="border: 1px solid; width: 65%; font-size: 12px; text-align: center; margin-left: auto; margin-right: auto; border-collapse: collapse;">
             <tr>
-                <th style="border: 1px solid;">Id</th>
                 <th style="border: 1px solid;">Nombre</th>
                 <th style="border: 1px solid;">Descripción del producto</th>
                 <th style="border: 1px solid;">Precio</th>
