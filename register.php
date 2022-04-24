@@ -21,8 +21,11 @@
             $message = 'Error al crear un usuario, faltan datos';
         }else{
             $message = 'Usuario creado exitosamente';
+            header("Location: index.php");
         }
     }
+    oci_close($conn);
+    
 ?>
 
 <!DOCTYPE html>
@@ -54,12 +57,13 @@
         <input type="email" placeholder="Correo" name="CORREO">
         <input type="text" placeholder="Telefono" name="TELEFONO">
         <input type = "password" placeholder="Contraseña" name="CONTRASENA">
+
         <button type="submit">
             Registrarse
         </button>
 
         <h5 class="registro">
-            <a href="index.php">Volver al inicio</a>
+            <a href="index.php">Volver al Login</a>
         </h5>
 
         <?php if(!empty($message)): ?>
