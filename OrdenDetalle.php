@@ -1,18 +1,14 @@
 <?php
 require_once('connections/connection.php');
 
-$query = 'BEGIN SHOW_INFO_PRODUCT(:productos, :PRODUCTO_BUSCADO); END;';
+$query = 'BEGIN SHOW_ORDER_det(:orden_det); END;';
 $stmt = oci_parse($conn, $query);
 //cursor
-$productos = oci_new_cursor($conn);
-oci_bind_by_name($stmt, ":productos", $productos, -1, OCI_B_CURSOR);
-
-//IN parameter
-$Producto_buscado = 'Air dried Cat food';
-oci_bind_by_name($stmt, ":PRODUCTO_BUSCADO", $Producto_buscado);
+$orden_det = oci_new_cursor($conn);
+oci_bind_by_name($stmt, ":orden_det", $orden_det, -1, OCI_B_CURSOR);
 
 oci_execute($stmt);
-oci_execute($productos, OCI_DEFAULT);
+oci_execute($orden_det, OCI_DEFAULT);
 ?>
 
 
@@ -29,6 +25,7 @@ oci_execute($productos, OCI_DEFAULT);
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styletable.css">
 
+
 </head>
 
 <body>
@@ -38,7 +35,7 @@ oci_execute($productos, OCI_DEFAULT);
     <header class="header">
 
         <a href="home.php" class="logo"> <i class="fas fa-paw"></i> Yako </a>
-    
+        
         <nav class="navbar">
             <a href="home.php">Home</a>
             <a href="home.php">About</a>
@@ -67,26 +64,22 @@ oci_execute($productos, OCI_DEFAULT);
     <section>
 
         <table>
-                <th>Nombre</th>
-                <th>Descripción del producto</th>
+            <tr>
+                <th>ID Orden Detalle</th>
+                <th>ID Orden</th>
+                <th>ID Producto</th>
+                <th>Cantidad</th>
                 <th>Precio</th>
-                <th>&nbsp;</th>
+                <th>Impuesto</th>
 
             </tr>
             <tr>
             
            <?php
-            while ($row = oci_fetch_array($productos, OCI_ASSOC+OCI_RETURN_NULLS)){
+            while (($row = oci_fetch_array($orden_det, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
                 foreach ($row as $item) {
                     print '<td>' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '<br/>' . '</td>';
                 }
-                print '<td >'.'<button class="btnCompra" type="submit" onclick="openPopup()">Comprar</button>'.
-                '<div class="popup" id="popup">
-                    <img src="image/404-tick.png" alt=""/>
-                    <h2>Thank You!</h2>
-                    <p>Your purchase has been successfully submitted</p>
-                    <button type="button" onclick="closePopup()">Close</button>
-                </div>'.'<br/>'.'</td>';
                 print '</tr>';
             }
             ?>
@@ -99,6 +92,7 @@ oci_execute($productos, OCI_DEFAULT);
     <br />
     <br />
     <br />
+
     <br />
     <br />
     <br />
@@ -136,4 +130,3 @@ oci_execute($productos, OCI_DEFAULT);
 
     </section>
     <script src="js/script.js"></script>
-    <script src="js/popUp.js"></script>
