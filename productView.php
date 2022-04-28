@@ -27,6 +27,8 @@ oci_execute($productos, OCI_DEFAULT);
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styletable.css">
+
 
 </head>
 
@@ -36,13 +38,13 @@ oci_execute($productos, OCI_DEFAULT);
 
     <header class="header">
 
-        <a href="#" class="logo"> <i class="fas fa-paw"></i> Yako </a>
-
+        <a href="home.php" class="logo"> <i class="fas fa-paw"></i> Yako </a>
+        
         <nav class="navbar">
-            <a href="index.php">Home</a>
-            <a href="#about">About</a>
+            <a href="home.php">Home</a>
+            <a href="home.php">About</a>
             <a href="shop.php">Shop</a>
-            <a href="#contact">Contact</a>
+            <a href="home.php">Contact</a>
         </nav>
 
         <div class="icons">
@@ -65,19 +67,28 @@ oci_execute($productos, OCI_DEFAULT);
 
     <section>
 
-        <table CLASS="table table-dark" style="border: 1px solid; width: 65%; font-size: 12px; text-align: center; margin-left: auto; margin-right: auto; border-collapse: collapse;">
+        <table>
             <tr>
-                <th style="border: 1px solid;">Nombre</th>
-                <th style="border: 1px solid;">Descripción del producto</th>
-                <th style="border: 1px solid;">Precio</th>
+                <th>Nombre</th>
+                <th>Descripción del producto</th>
+                <th>Precio</th>
+                <th>&nbsp;</th>
+
             </tr>
-            <tr ">
+            <tr>
             
            <?php
-            while (($row = oci_fetch_array($productos, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+            while ($row = oci_fetch_array($productos, OCI_ASSOC+OCI_RETURN_NULLS)) {
                 foreach ($row as $item) {
-                    print '<td style="border: 1px solid; height: 70px; width: 13%">' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '<br/>' . '</td>';
+                    print '<td>' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '<br/>' . '</td>';
                 }
+                print '<td >'.'<button class="btnCompra" type="submit" onclick="openPopup()">Comprar</button>'.
+                '<div class="popup" id="popup">
+                    <img src="image/404-tick.png" alt=""/>
+                    <h2>Thank You!</h2>
+                    <p>Your purchase has been successfully submitted</p>
+                    <button type="button" onclick="closePopup()">Close</button>
+                </div>'.'<br/>'.'</td>';
                 print '</tr>';
             }
             ?>
@@ -86,14 +97,31 @@ oci_execute($productos, OCI_DEFAULT);
 
     </section>
 
-    <br/>
-    <br/>   
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br /> 
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     
     <!--Section footer starts-->
 
@@ -110,3 +138,4 @@ oci_execute($productos, OCI_DEFAULT);
 
     </section>
     <script src="js/script.js"></script>
+    <script src="js/popUp.js"></script>

@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/styletable.css">
+
 </head>
 <body>
     
@@ -19,7 +20,7 @@
         <a href="home.php" class="logo"> <i class="fas fa-paw"></i> Yako </a>
     
         <nav class="navbar">
-            <a href="index.php">Home</a>
+            <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="shop.php">Shop</a>
             <a href="#contact">Contact</a>
@@ -221,5 +222,6 @@
     
     </section>
     <script src="js/script.js"></script>
+    <script src="js/popUp.js"></script>
 </body>
 </html>
