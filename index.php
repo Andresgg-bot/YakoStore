@@ -6,7 +6,7 @@
     if(!empty($_POST['CORREO']) && !empty($_POST['CONTRASENA'])){
 
         $Resultado = oci_new_cursor($conn);
-        $query = 'begin LOGIN (:CORREO, :CONTRASENA, :RESULTADO); end;';
+        $query = 'begin AUTH_USUARIOS.LOGIN (:CORREO, :CONTRASENA, :RESULTADO); end;';
 
         $records = oci_parse($conn, $query);
         oci_bind_by_name($records, ':CORREO', $_POST['CORREO']);
@@ -21,7 +21,7 @@
             }else{
                 /*var_dump(oci_execute($Resultado));
                 die();*/
-                $message = 'Usuario ingresado exitosamente';
+                $message = 'User register successfully';
                 header("Location: home.php");
             } 
         }
@@ -50,15 +50,15 @@
             <img class="imagen" src="image/Logo.png"  alt="Profile Photo" >
         </h1>
         <h5 class="advice">
-            Rellene los espacios para iniciar sesión.
+            Fill the required spaces to sign up
         </h5>
-        <input type="email" placeholder="Correo" name="CORREO">
-        <input type = "password" placeholder="Contraseña" name="CONTRASENA">
+        <input type="email" placeholder="Email" name="CORREO">
+        <input type = "password" placeholder="Password" name="CONTRASENA">
         <button type="submit">
             Login
         </button>
         <h5 class="registro">
-            ¿No esta registrado? <a href="register.php">Crea una cuenta aquí</a>
+            Not register? <a href="register.php">Create a new account here</a>
         </h5>
 
         <?php if(!empty($message)): ?>

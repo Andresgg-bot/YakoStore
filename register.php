@@ -5,7 +5,7 @@
 
     if(!empty($_POST['NOMBRE']) && !empty($_POST['PRIMER_APELLIDO']) && !empty($_POST['SEGUNDO_APELLIDO'])
     && !empty($_POST['CORREO']) && !empty($_POST['TELEFONO']) && !empty($_POST['CONTRASENA'])){
-        $query = 'begin REGISTRAR_USUARIO (:NOMBRE, :PRIMER_APELLIDO, :SEGUNDO_APELLIDO, :CORREO, :TELEFONO, :CONTRASENA); end;';
+        $query = 'begin AUTH_USUARIOS.REGISTRAR_USUARIO (:NOMBRE, :PRIMER_APELLIDO, :SEGUNDO_APELLIDO, :CORREO, :TELEFONO, :CONTRASENA); end;';
 
         $stmt = oci_parse($conn, $query);
         oci_bind_by_name($stmt, ':NOMBRE', $_POST['NOMBRE']);
@@ -46,24 +46,24 @@
 <body>
     
     <form action ="register.php" class="form-box" method="post">
-        <h1 class = "advice">Registro</h1>
+        <h1 class = "advice">Register</h1>
         <h5 class="advice">
-            Por favor, rellene los espacios para registrarse como usuario.
+            Please, fill the required spaces to create a new account.
         </h5>
 
-        <input type="text" placeholder="Nombre" name="NOMBRE">
-        <input type="text" placeholder="Primer Apellido" name="PRIMER_APELLIDO">
-        <input type="text" placeholder="Segundo Apellido" name="SEGUNDO_APELLIDO">
-        <input type="email" placeholder="Correo" name="CORREO">
-        <input type="text" placeholder="Telefono" name="TELEFONO">
-        <input type = "password" placeholder="Contraseña" name="CONTRASENA">
+        <input type="text" placeholder="Name" name="NOMBRE">
+        <input type="text" placeholder="Last Name" name="PRIMER_APELLIDO">
+        <input type="text" placeholder="Second Last Name" name="SEGUNDO_APELLIDO">
+        <input type="email" placeholder="Email" name="CORREO">
+        <input type="text" placeholder="Phone" name="TELEFONO">
+        <input type = "password" placeholder="Password" name="CONTRASENA">
 
         <button type="submit">
-            Registrarse
+            Register
         </button>
 
         <h5 class="registro">
-            <a href="index.php">Volver al Login</a>
+            <a href="index.php">Go back to Login</a>
         </h5>
 
         <?php if(!empty($message)): ?>
